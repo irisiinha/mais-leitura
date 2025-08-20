@@ -11,13 +11,18 @@ const terminal = readFile.createInterface({
 
 function question(pergunta) {
   return new Promise(function (resolve, reject){
-    terminal.question(pergunta + "\n", function(valor){
+    terminal.question(pergunta,function(valor){
       resolve(valor)
     });
   });
+  return promrssa;
 }
-question("qual seu nome").then(function(valor){
-  console.log(`seja bem vindo ${valor}`); 
+question("qual seu nome? \n")
+  .then(function(nome){
+  console.log("nome:" + nome); 
+})
+catch(function (erro){
+  console.log("deu error " + error);
 })
 .finally(function (){
   terminal.close();
