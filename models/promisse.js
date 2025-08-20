@@ -15,7 +15,7 @@ function question(pergunta) {
       resolve(valor)
     });
   });
-  return promrssa;
+  return promise;
 }
 question("qual seu nome? \n")
   .then(function(nome){
