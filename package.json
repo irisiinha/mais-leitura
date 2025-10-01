@@ -6,8 +6,8 @@
   "scripts": {
     "teste": "jest",
     "teste:watch": "jest --watch",
-    "service:up": "docker -compose up -d",
-    "service:down": "docker-compose down"
+    "service:up": "docker compose up -d",
+    "service:down": "docker compose down"
   },
   "author": "Iris",
   "license": "MIT",
