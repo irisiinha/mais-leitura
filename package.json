@@ -8,8 +8,8 @@
     "teste:watch": "jest --watch",
     "service:up": "docker compose up -d",
     "service:down": "docker compose down",
-    "migrate:create": "node-pg-migrate -m infra/migratinos create"
-    "migrea:up":"node-pg-migrate up"
+    "migrate:create": "node-pg-migrate -m infra/migratinos create",
+    "migrate:up":"node-pg-migrate -m infra/migratinos --envPath .env up"
   },
   "author": "Iris",
   "license": "MIT",
