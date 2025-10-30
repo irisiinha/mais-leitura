@@ -10,9 +10,9 @@ export const shorthands = undefined;
  */
 export const up = (pgm) => {
 pgm.sql(`
- 
+
   CREATE TABLE livro (
-  id VARCHAR(36) PRIMARY KEY,
+    id VARCHAR(36) PRIMARY KEY,
     numero_paginas INTEGER,
     autor VARCHAR(255),
     titulo VARCHAR(100) NOT NULL,
@@ -24,7 +24,7 @@ pgm.sql(`
     editora VARCHAR(225),
     disponibilidade BOOLEAN DEFAULT true,
     tags TEXT,
-  price NUMERIC(10,2),DEFAULT 0.0
+    price NUMERIC(10,2) DEFAULT 0.0
    );
   `);
 };

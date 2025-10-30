@@ -1,10 +1,11 @@
 require('dotenv').config();
-console.log(process.env);
+const livroRepositorio = require('./infra/repoository/livro');
 
-query("SELECT 1 + 1;")
- .then(function(value) {
-   console.log(value);
- })
- .catch(function(err) {
-   console.log ("Deu ruim", err);
+livroRepositorio
+.consutarTodos()
+  .then(function (resultados) {
+  console.log(resultados);
+})
+.catch(function (erro) {
+console.log("Deu erro: ", erro);
 });
