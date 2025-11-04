@@ -9,9 +9,7 @@ async function query(sql, args = []) {
     password: process.env.DB_PASSWORD,
   });
   await client.connect();
-
   const res = await client.query(sql, args);
-
   await client.end();
   return res.rows;
 }

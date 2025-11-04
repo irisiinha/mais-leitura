@@ -8,4 +8,12 @@ async function consutarTodos(){
   return resultados;
 }
 
-module.exports = { consutarTodos };
+async function consutarTops(){
+  const sql = `SELECT * FROM livro WHERE top_livro = true`;
+
+  const resultados = await query(sql)
+
+  return resultados;
+}
+
+module.exports = { consutarTodos, consutarTops};
