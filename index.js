@@ -5,7 +5,7 @@ const app = express();
 
 app.get("/", function (req, res) {
   console.log(req.method, req.url);
-  res.send("Raiz do projeto");
+  res.send("olá Iris");
 });
 
 const port = process.env.PORT || 3000;
