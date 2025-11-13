@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", async function (req, res) {
-  const livrosTops = await livroRepository.consultaTops();
+  const livrosTops = await livroRepository.consutaTops();
 
   let html = `<!DOCTYPE html>
 <html lang="en">
