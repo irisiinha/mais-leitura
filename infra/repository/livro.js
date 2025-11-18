@@ -9,11 +9,18 @@ async function consutarTodos(){
 }
 
 async function consutaTops(){
-  const sql = `SELECT * FROM livro WHERE top_livro = true`;
+  const sql = `SELECT * FROM livro WHERE top_livro= true`;
+
+  const resultados = await query(sql)
+
+  return resultados;
+}
+async function consutaAdqueridos(){
+  const sql = `SELECT * FROM livro WHERE livros_mas_adqueridos= true`;
 
   const resultados = await query(sql)
 
   return resultados;
 }
 
-module.exports = { consutarTodos, consutaTops};
+module.exports = { consutarTodos, consutaTops , consutaAdqueridos };
