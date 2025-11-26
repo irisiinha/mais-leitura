@@ -4,7 +4,24 @@ const express = require("express");
 const app = express();
 
 app.get("/", async function (req, res) {
-  const livrosTops = await livroRepository.consutaTops();
+  const livrosTops = await livroRepository.consultaTops();
+  const livrosMaisAdquiridos = await livroRepository.consultaMaisAdquiridos();
+  const livrosCurtidos = await livroRepository.consultaCurtidas();
+
+  let itensTops = "";
+  for (livro of livrosTops) {
+    itensTops += `<li>${livro.titulo}</li>`;
+  }
+
+  let itensMaisAdquiridos = "";
+  for (livro of livrosMaisAdquiridos) {
+    itensMaisAdquiridos += `<li>${livro.titulo}</li>`;
+  }
+
+  let itensCurtidos = "";
+  for (livro of livrosCurtidos) {
+    itensCurtidos += `<li>${livro.titulo}</li>`;
+  }
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -15,13 +32,18 @@ app.get("/", async function (req, res) {
 </head>
 <body>
   <ul>
-`;
+    <p>Itens Tops</p>
+    <ul>
+    ${itensTops}
+    </ul>
 
-  for (livro of livrosTops) {
-    html += `<li>${livro}</li>`;
-  }
-
-  html += `
+    <p>Itens mais adquiridos</p>
+    <ul>
+    ${itensMaisAdquiridos}
+    </ul>
+    <p>Itens Curtidos</p>
+    <ul>
+    ${itensCurtidos}
     </ul>
   </body>
 </html>`;
